@@ -17,6 +17,7 @@ void MainWindow::update_ui()
 {
     this->ui->spin_scale->setValue(this->ui->renderArea->getScale());
     this->ui->spin_interval->setValue(this->ui->renderArea->getIntervalLength());
+    this->ui->spin_count->setValue(this->ui->renderArea->getStepCount());
 }
 
 void MainWindow::on_btn_Astroid_clicked()
@@ -62,4 +63,9 @@ void MainWindow::on_spin_scale_valueChanged(double scale)
 void MainWindow::on_spin_interval_valueChanged(double length)
 {
     this->ui->renderArea->setIntervalLength(length);
+}
+
+void MainWindow::on_spin_count_valueChanged(int count)
+{
+    this->ui->renderArea->setStepCount(count);
 }

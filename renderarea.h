@@ -23,11 +23,13 @@ public:
     void setShape(ShapeType shape) { m_shape = shape; on_shape_changed(); }
     void setScale(float scale) { m_Scale = scale; repaint(); }
     void setIntervalLength(float length) { m_IntervalLength = length; repaint(); }
+    void setStepCount(int count) { m_StepCount = count; repaint(); }
 
     //Getters
     ShapeType getShape() const { return m_shape; }
     float getScale() const { return m_Scale; }
     float getIntervalLength() const { return m_IntervalLength; }
+    int getStepCount() const { return m_StepCount; }
 
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;

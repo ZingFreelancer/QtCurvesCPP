@@ -31,6 +31,8 @@ private slots:
     //Variables
     void on_spin_interval_valueChanged(double arg1);
 
+    void on_spin_count_valueChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
 
