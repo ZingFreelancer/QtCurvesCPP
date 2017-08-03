@@ -80,21 +80,21 @@
         <item>
          <widget class="QPushButton" name="btn_Cicloid">
           <property name="text">
-           <string>Cicloid</string>
+           <string>Cyicloid</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="btw_HuygensCicloid">
           <property name="text">
-           <string>Huygens Cicloid</string>
+           <string>Huygens Cycloid</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="btn_HypoCicloid">
           <property name="text">
-           <string>Hypo Cicloid</string>
+           <string>Hypo Cycloid</string>
           </property>
          </widget>
         </item>
