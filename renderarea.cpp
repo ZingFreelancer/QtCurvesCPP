@@ -33,7 +33,7 @@ void RenderArea::paintEvent(QPaintEvent *event)
     prevPixel.setX(prevPoint.x() * m_Scale + center.x());
     prevPixel.setY(prevPoint.y() * m_Scale + center.y());
     float step = m_IntervalLength / m_StepCount;
-    for(float t = 0; t < m_IntervalLength; t+= step)
+    for(float t = 0; t < m_IntervalLength+step; t+= step)
     {
         QPointF point = compute(t);
         QPoint pixel;
@@ -81,14 +81,14 @@ void RenderArea::on_shape_changed()
             shapeName = "[Line]";
         break;
         case Circle:
-            m_IntervalLength = 2 * M_PI+0.1f;
+            m_IntervalLength = 2 * M_PI;
             m_Scale = 165;
             m_StepCount = 128;
             shapeName = "[Cirlce]";
         break;
         case Ellipse:
             m_Scale = 75;
-            m_IntervalLength = 2 * M_PI+0.1f;
+            m_IntervalLength = 2 * M_PI;
             m_StepCount = 256;
             shapeName = "[Ellipse]";
         break;
