@@ -3,8 +3,11 @@
 #include <QPainter>
 
 RenderArea::RenderArea(QWidget *parent) : QWidget(parent), m_backgroundColor(0, 0, 255),
-m_shapeColor(255, 255, 255), m_shape(Astroid)
-{ on_shape_changed(); }
+    m_shape(Astroid), m_Pen(Qt::white)
+{
+    m_Pen.setWidth(2);
+    on_shape_changed();
+}
 
 QSize RenderArea::minimumSizeHint() const
 {
@@ -22,7 +25,7 @@ void RenderArea::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
     painter.setBrush(m_backgroundColor);
-    painter.setPen(m_shapeColor);
+    painter.setPen(m_Pen);
 
     //Drawing area
     painter.drawRect(this->rect());
