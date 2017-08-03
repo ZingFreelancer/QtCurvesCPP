@@ -150,6 +150,20 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="btn_cloud">
+        <property name="text">
+         <string>Cloud 1</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_cloud2">
+        <property name="text">
+         <string>Cloud 2</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <spacer name="verticalSpacer_2">
         <property name="orientation">
          <enum>Qt::Vertical</enum>

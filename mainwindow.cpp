@@ -113,3 +113,17 @@ void MainWindow::on_btn_starfish_clicked()
     this->ui->renderArea->repaint();
     update_ui();
 }
+
+void MainWindow::on_btn_cloud_clicked()
+{
+    this->ui->renderArea->setShape(RenderArea::Cloud1);
+    this->ui->renderArea->repaint();
+    update_ui();
+}
+
+void MainWindow::on_btn_cloud2_clicked()
+{
+    this->ui->renderArea->setShape(RenderArea::Cloud2);
+    this->ui->renderArea->repaint();
+    update_ui();
+}

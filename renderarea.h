@@ -23,7 +23,9 @@ public:
         Circle,
         Ellipse,
         Fancy,
-        Starfish
+        Starfish,
+        Cloud1,
+        Cloud2
     };
     QString shapeName;
 
@@ -68,6 +70,9 @@ private:
     QPointF compute_ellipse(float t);
     QPointF compute_fancy(float t);
     QPointF compute_starfish(float t);
+    QPointF compute_cloud1(float t);
+    QPointF compute_cloud2(float t);
+    QPointF compute_cloud_w_sigh(float t, float sign);
 };
 
 #endif // RENDERAREA_H

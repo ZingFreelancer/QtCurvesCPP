@@ -46,6 +46,10 @@ private slots:
     //Variables
     void on_btn_starfish_clicked();
 
+    void on_btn_cloud_clicked();
+
+    void on_btn_cloud2_clicked();
+
 private:
     Ui::MainWindow *ui;
 

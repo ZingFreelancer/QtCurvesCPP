@@ -107,6 +107,18 @@ void RenderArea::on_shape_changed()
             m_IntervalLength = 6 * M_PI;
             shapeName = "[Starfish]";
         break;
+        case Cloud1:
+            m_Scale = 10;
+            m_IntervalLength = 28 * M_PI;
+            m_StepCount = 128;
+            shapeName = "[Cloud 1]";
+        break;
+        case Cloud2:
+            m_Scale = 10;
+            m_IntervalLength = 28 * M_PI;
+            m_StepCount = 128;
+            shapeName = "[Cloud 2]";
+        break;
         default: break;
     }
 }
@@ -124,6 +136,8 @@ QPointF RenderArea::compute(float t)
         case Ellipse: return compute_ellipse(t);
         case Fancy: return compute_fancy(t);
         case Starfish: return compute_starfish(t);
+        case Cloud1: return compute_cloud1(t);
+        case Cloud2: return compute_cloud2(t);
         default: break;
     }
     return QPointF(0,0);
@@ -190,4 +204,24 @@ QPointF RenderArea::compute_starfish(float t)
     return QPointF(
                 (R - r) * cos(t) + d * cos(t * (R - r) / r),
                 (R - r) * sin(t) - d * sin(t * (R - r) / r));
+}
+
+QPointF RenderArea::compute_cloud1(float t)
+{
+    return compute_cloud_w_sigh(t, -1);
+}
+
+QPointF RenderArea::compute_cloud2(float t)
+{
+    return compute_cloud_w_sigh(t, 1);
+}
+
+QPointF RenderArea::compute_cloud_w_sigh(float t, float sign)
+{
+    const float a = 14.0f;
+    const float b = 1.0f;
+
+    return QPointF(
+                (a + b) * cos(t * b / a) + sign * b * cos(t * (a + b) / a),
+                (a + b) * sin(t * b / a) - b * sin(t * (a + b) / a));
 }
