@@ -19,8 +19,15 @@ public:
     QColor getBackgroundColor() const
     { return m_backgroundColor; }
 
+    //Setters
     void setShape(ShapeType shape) { m_shape = shape; on_shape_changed(); }
+    void setScale(float scale) { m_Scale = scale; repaint(); }
+    void setIntervalLength(float length) { m_IntervalLength = length; repaint(); }
+
+    //Getters
     ShapeType getShape() const { return m_shape; }
+    float getScale() const { return m_Scale; }
+    float getIntervalLength() const { return m_IntervalLength; }
 
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
